@@ -1,0 +1,26 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from evaluation import demo as eval_demo
+
+
+def separator(title):
+    print()
+    print("=" * 60)
+    print(f"  {title}")
+    print("=" * 60)
+    print()
+
+
+def main():
+    separator("L8: Evaluation Part I")
+    eval_demo()
+
+    print()
+    print("=" * 60)
+    print("  Done! L8 complete.")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
