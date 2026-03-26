@@ -1,4 +1,10 @@
-from L1 import completion, tokens, chat_format, token_count
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from completion import get_completion
+from tokens import demo as tokens_demo
+from chat_format import get_completion_from_messages, demo as chat_format_demo
+from token_count import get_completion_and_token_count, demo as token_count_demo
 
 
 def separator(title):
@@ -11,16 +17,18 @@ def separator(title):
 
 def main():
     separator("1. Basic Completion")
-    completion.demo()
+    print("Prompt: What is the capital of France?")
+    response = get_completion("What is the capital of France?")
+    print(f"Response: {response}")
 
     separator("2. Tokens & Tokenization")
-    tokens.demo()
+    tokens_demo()
 
     separator("3. Chat Format (System / User / Assistant)")
-    chat_format.demo()
+    chat_format_demo()
 
     separator("4. Token Counting")
-    token_count.demo()
+    token_count_demo()
 
     print()
     print("=" * 60)

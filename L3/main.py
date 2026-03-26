@@ -1,0 +1,30 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from moderation import demo as moderation_demo
+from prompt_injection import demo as prompt_injection_demo
+
+
+def separator(title):
+    print()
+    print("=" * 60)
+    print(f"  {title}")
+    print("=" * 60)
+    print()
+
+
+def main():
+    separator("1. Content Moderation (OpenAI Moderation API)")
+    moderation_demo()
+
+    separator("2. Prompt Injection Defense")
+    prompt_injection_demo()
+
+    print()
+    print("=" * 60)
+    print("  Done! L3 complete.")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()

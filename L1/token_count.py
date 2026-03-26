@@ -1,4 +1,9 @@
-from L1.setup import client
+import os
+from dotenv import load_dotenv, find_dotenv
+from openai import OpenAI
+
+_ = load_dotenv(find_dotenv())
+client = OpenAI()
 
 
 def get_completion_and_token_count(messages, model="gpt-3.5-turbo", temperature=0):

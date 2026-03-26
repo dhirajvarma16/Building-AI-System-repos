@@ -1,4 +1,9 @@
-from L1.setup import client
+import os
+from dotenv import load_dotenv, find_dotenv
+from openai import OpenAI
+
+_ = load_dotenv(find_dotenv())
+client = OpenAI()
 
 
 def get_completion(prompt, model="gpt-3.5-turbo"):
@@ -11,11 +16,7 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
     return response.choices[0].message.content
 
 
-def demo():
+if __name__ == "__main__":
     print("Prompt: What is the capital of France?")
     response = get_completion("What is the capital of France?")
     print(f"Response: {response}")
-
-
-if __name__ == "__main__":
-    demo()

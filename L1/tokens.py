@@ -1,6 +1,8 @@
-import tiktoken
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from L1.completion import get_completion
+import tiktoken
+from completion import get_completion
 
 
 def demo():
